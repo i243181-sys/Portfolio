@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "browser": "152.0.7977.82",
+  "checks": [
+    "Portfolio sections and CV identity render",
+    "Corrected name and interactive hero focus selectors work",
+    "All six distinct project illustrations render",
+    "Internal links resolve and downloaded CV matches corrected public PDF",
+    "Every project filter and reset works",
+    "All six project dialogs open, trap focus, close with Escape, and restore focus",
+    "Additional project disclosure opens and closes",
+    "Contact validation, copied email, encoded draft and honest status work",
+    "Reduced motion disables ambient movement and smooth scrolling",
+    "Eight mobile/tablet/desktop sizes have no horizontal overflow or WCAG A/AA violations",
+    "Mobile menus, anchors and project dialogs work at narrow and landscape sizes",
+    "Keyboard skip link works; final desktop and mobile screenshots saved",
+    "Scroll reveals complete and ambient pause/resume works",
+    "New visual animations obey pause and reduced-motion preferences",
+    "No JavaScript errors, console errors, or failed HTTP responses"
+  ],
+  "layouts": [
+    {
+      "width": 320,
+      "height": 740,
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "width": 520,
+      "height": 820,
+      "overflow": false
+    },
+    {
+      "width": 667,
+      "height": 375,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "badResponses": []
+}

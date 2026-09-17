@@ -1,0 +1,11 @@
+@import "tailwindcss" source(none);
+@source '../app/App.tsx';
+@source '../app/components/*.tsx';
+@source '../app/components/ui/button.tsx';
+@source '../app/components/ui/dialog.tsx';
+@source '../app/components/ui/input.tsx';
+@source '../app/components/ui/textarea.tsx';
+@import "tw-animate-css";
+@import "./default_theme.css";
+@import "./globals.css";
+@import "./enhancements.css";
