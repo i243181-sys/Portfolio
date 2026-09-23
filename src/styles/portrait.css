@@ -1,0 +1,250 @@
+.hero-with-portrait {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(40px, 5vw, 76px);
+  text-align: left;
+}
+.hero-copy {
+  min-width: 0;
+}
+.hero-with-portrait .hero-name {
+  font-size: clamp(60px, 6.5vw, 88px);
+  max-width: 620px;
+  margin-top: 26px;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+.hero-with-portrait .hero-role {
+  font-size: clamp(26px, 2.6vw, 36px);
+}
+.hero-with-portrait .hero-description {
+  margin-inline: 0;
+  max-width: 510px;
+  font-size: 15px;
+}
+.hero-with-portrait .desktop-break {
+  display: none;
+}
+.hero-with-portrait .hero-disciplines,
+.hero-with-portrait .hero-actions,
+.hero-with-portrait .hero-footnote {
+  justify-content: flex-start;
+}
+.hero-with-portrait .focus-preview {
+  margin-inline: 0;
+}
+.hero-portrait {
+  width: 100%;
+  max-width: 420px;
+  justify-self: center;
+  padding: 20px 10px 28px;
+}
+.portrait-stage {
+  position: relative;
+  perspective: 1100px;
+  isolation: isolate;
+}
+.portrait-halo {
+  position: absolute;
+  inset: -12%;
+  z-index: -2;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #8b69d638, #4f80dd14 45%, transparent 70%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+.portrait-outline {
+  position: absolute;
+  inset: 9px -12px -9px 12px;
+  z-index: -1;
+  border: 1px solid #9c8ae03d;
+  border-radius: 28px;
+  transform: rotate(4deg);
+  pointer-events: none;
+}
+.portrait-card {
+  position: relative;
+  padding: 7px;
+  border: 1px solid #b4abed63;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #273453, #171d32 55%, #322749);
+  box-shadow: 0 24px 64px #0005, 0 0 40px #8873d512;
+  transform-style: preserve-3d;
+}
+.portrait-photo-wrap {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 17px;
+  background: #30333c;
+  isolation: isolate;
+}
+.portrait-photo {
+  display: block;
+  position: absolute;
+  left: -3%;
+  top: -3%;
+  width: 106%;
+  max-width: none;
+  height: 106%;
+  object-fit: cover;
+  object-position: center 35%;
+  user-select: none;
+}
+.portrait-shade,
+.portrait-light {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.portrait-shade {
+  background: linear-gradient(180deg, transparent 62%, #080e2099);
+}
+.portrait-light {
+  opacity: 0;
+  transition: opacity 250ms;
+  mix-blend-mode: soft-light;
+}
+.portrait-caption {
+  position: absolute;
+  bottom: 34px;
+  left: 26px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #e4e9f9;
+  font: 9px ui-monospace, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: translateZ(15px);
+}
+.portrait-caption-line {
+  width: 20px;
+  height: 1px;
+  background: #b5a4f0;
+}
+.portrait-badge {
+  position: absolute;
+  right: -14px;
+  top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 15px;
+  border: 1px solid #aba0e04f;
+  border-radius: 10px;
+  background: #10192bed;
+  box-shadow: 0 8px 24px #0003;
+  color: #dce5f7;
+  font: 10px ui-monospace, monospace;
+  transform: translateZ(28px);
+}
+.about-portrait-frame {
+  overflow: hidden;
+}
+.about-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .portrait-stage[data-interactive="true"]:hover .portrait-light {
+    opacity: 1;
+  }
+}
+@media (max-width: 1000px) and (min-width: 768px) {
+  .hero-with-portrait {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 32px;
+  }
+  .hero-with-portrait .hero-name {
+    font-size: clamp(48px, 6.6vw, 66px);
+  }
+  .hero-with-portrait .hero-role {
+    font-size: 27px;
+  }
+  .hero-with-portrait .hero-kicker {
+    font-size: 9px;
+  }
+  .hero-with-portrait .hero-footnote {
+    font-size: 9px;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .hero-with-portrait .hero-actions .action-button {
+    padding-inline: 13px;
+    font-size: 11px;
+  }
+  .portrait-badge {
+    font-size: 8px;
+    padding: 10px 12px;
+  }
+  .portrait-caption {
+    font-size: 7px;
+    left: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .hero-with-portrait {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+    text-align: center;
+  }
+  .hero-portrait {
+    grid-row: 1;
+    max-width: 230px;
+    padding: 8px 10px;
+  }
+  .hero-with-portrait .hero-name {
+    font-size: clamp(46px, 10.4vw, 78px);
+    margin-inline: auto;
+    max-width: 620px;
+  }
+  .hero-with-portrait .hero-description {
+    margin-inline: auto;
+    font-size: 14px;
+    max-width: 430px;
+  }
+  .hero-with-portrait .hero-disciplines,
+  .hero-with-portrait .hero-actions,
+  .hero-with-portrait .hero-footnote {
+    justify-content: center;
+  }
+  .hero-with-portrait .focus-preview {
+    margin-inline: auto;
+  }
+  .portrait-badge {
+    font-size: 8px;
+    padding: 10px 12px;
+    right: -17px;
+    top: 18px;
+  }
+  .portrait-caption {
+    display: none;
+  }
+}
+@media (max-width: 520px) {
+  .hero-with-portrait .hero-name {
+    font-size: clamp(46px, 13.5vw, 67px);
+    max-width: 350px;
+  }
+  .hero-with-portrait .hero-role {
+    font-size: 24px;
+  }
+  .hero-with-portrait .hero-description {
+    font-size: 13px;
+    max-width: 350px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portrait-card,
+  .portrait-photo {
+    transform: none !important;
+  }
+  .portrait-light {
+    display: none;
+    transition: none;
+  }
+}

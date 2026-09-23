@@ -1,4 +1,6 @@
 import { ArrowUpRight, Brain, Code2, MapPin } from "lucide-react";
+import portrait from "../../assets/mughees.png";
+import { profile } from "../data/portfolio";
 import { Reveal, SectionHeading } from "./Reveal";
 
 export function About() {
@@ -12,22 +14,25 @@ export function About() {
         />
         <div className="about-grid">
           <Reveal className="about-art">
-            <div className="monogram-orbit" aria-hidden="true">
-              <div className="orbit-ring" />
-              <span className="orbit-node orbit-node-one" />
-              <span className="orbit-node orbit-node-two" />
-              <div className="monogram-core">
-                <span className="monogram">
-                  MH<span>.</span>
-                </span>
-                <span className="monogram-label">
-                  BUILD. UNDERSTAND. ITERATE.
-                </span>
+            <div className="monogram-orbit">
+              <div className="orbit-ring" aria-hidden="true" />
+              <span className="orbit-node orbit-node-one" aria-hidden="true" />
+              <span className="orbit-node orbit-node-two" aria-hidden="true" />
+              <div className="monogram-core about-portrait-frame">
+                <img
+                  src={portrait}
+                  alt={profile.name}
+                  className="about-portrait"
+                  width={1122}
+                  height={1402}
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <span className="orbit-icon orbit-icon-code">
+              <span className="orbit-icon orbit-icon-code" aria-hidden="true">
                 <Code2 size={23} />
               </span>
-              <span className="orbit-icon orbit-icon-brain">
+              <span className="orbit-icon orbit-icon-brain" aria-hidden="true">
                 <Brain size={24} />
               </span>
             </div>

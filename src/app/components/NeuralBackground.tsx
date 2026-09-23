@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
-import { useReducedMotion } from "motion/react";
+import { useMotionPreferences } from "./MotionPreferences";
 
 // A quiet version of the template's neural field. No pointer listeners or layout work per frame.
 export function NeuralBackground({ paused }: { paused: boolean }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const reducedMotion = useReducedMotion();
+  const { disabled } = useMotionPreferences();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -16,7 +16,7 @@ export function NeuralBackground({ paused }: { paused: boolean }) {
       frame = 0,
       previous = 0;
     let nodes: { x: number; y: number; vx: number; vy: number }[] = [];
-    const isStatic = reducedMotion || paused;
+    const isStatic = disabled || paused;
 
     function paint(delta = 0) {
       if (!ctx) return;
@@ -81,7 +81,7 @@ export function NeuralBackground({ paused }: { paused: boolean }) {
       window.removeEventListener("resize", resize);
       document.removeEventListener("visibilitychange", syncVisibility);
     };
-  }, [reducedMotion, paused]);
+  }, [disabled, paused]);
 
   return (
     <canvas ref={canvasRef} className="neural-background" aria-hidden="true" />
